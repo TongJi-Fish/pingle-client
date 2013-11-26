@@ -1,0 +1,22 @@
+package com.app.ipinle.model;
+
+public class User {
+
+	private String id;
+	private String sid;
+	private String name;
+	private String password;
+	private String sign;
+	
+	// default is no login
+	private boolean isLogin = false;
+	
+	//singal instance for login
+	private User user = null;
+	
+	public User getInstance(){
+		if(this.user == null)
+			this.user = new User();
+		return this.user;
+	}
+}

@@ -1,0 +1,7 @@
+package com.app.ipinle.ui;
+
+import com.app.ipinle.base.BaseUi;
+
+public class LoginUi extends BaseUi {
+
+}
