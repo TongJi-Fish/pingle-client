@@ -30,6 +30,15 @@ public class MainActivity extends Activity {
 		};
 		
 		button.setOnClickListener((android.view.View.OnClickListener) mOnClickListener);
+		
+		Button mapButton = (Button) findViewById(R.id.mapButton);
+		mapButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, MapActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 	
 	@Override
