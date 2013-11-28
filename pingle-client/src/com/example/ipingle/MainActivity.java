@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
 				forward(LoginUi.class);
 			}
 			
@@ -31,11 +30,11 @@ public class MainActivity extends Activity {
 		
 		button.setOnClickListener((android.view.View.OnClickListener) mOnClickListener);
 		
-		Button mapButton = (Button) findViewById(R.id.mapButton);
-		mapButton.setOnClickListener(new OnClickListener() {
+		Button routePlanButton = (Button) findViewById(R.id.routePlanButton);
+		routePlanButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(MainActivity.this, MapActivity.class);
+				Intent intent = new Intent(MainActivity.this, RoutePlanActivity.class);
 				startActivity(intent);
 			}
 		});
