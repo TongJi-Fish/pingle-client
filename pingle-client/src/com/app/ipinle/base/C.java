@@ -2,7 +2,7 @@ package com.app.ipinle.base;
 
 public class C {
 	
-	public static final String hostname="jackfishcat.xicp.net";
+	public static final String hostname="localhosta";//"jackfishcat.xicp.net";
 //	
 //	
 //	////////////////////////////////////////////////////////////////////////////////////////////////
@@ -17,7 +17,7 @@ public class C {
 	public static final class api {
 		public static final String base				= "http://"+hostname;
 //		public static final String index			= "/index/index";
-		public static final String login			= "/ipingle.php/authentication/test";
+		public static final String login			= "/index.php/usercontrol/login";
 //		public static final String logout			= "/index/logout";
 //		public static final String faceView 		= "/image/faceView";
 //		public static final String faceList 		= "/image/faceList";

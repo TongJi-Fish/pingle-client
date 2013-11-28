@@ -12,6 +12,7 @@ import android.widget.EditText;
 import com.app.ipinle.base.BaseMessage;
 import com.app.ipinle.base.BaseUi;
 import com.app.ipinle.base.C;
+import com.example.ipingle.MainActivity;
 import com.example.ipingle.R;
 
 public class LoginUi extends BaseUi {
@@ -29,12 +30,12 @@ public class LoginUi extends BaseUi {
 	}
 	
 	public void initial(){
-		this.userName = (EditText) findViewById(R.id.etAccount);
-		this.userPassword = (EditText) findViewById(R.id.etPassword);
-		this.loginBtn = (Button) findViewById(R.id.btnLogin);
+		this.userName = (EditText) findViewById(R.id.userName);
+		this.userPassword = (EditText) findViewById(R.id.userPassword);
+		this.loginBtn = (Button) findViewById(R.id.login);
 		this.loginBtn.setOnClickListener(mOnClickListener);
-		this.registerBtn = (Button) findViewById(R.id.btnRegister);
-		this.registerBtn.setOnClickListener(mOnClickListener);
+//		this.registerBtn = (Button) findViewById(R.id.btnRegister);
+//		this.registerBtn.setOnClickListener(mOnClickListener);
 	}
 	
 	OnClickListener mOnClickListener = new OnClickListener(){
@@ -43,12 +44,12 @@ public class LoginUi extends BaseUi {
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
 			switch(v.getId()){
-			case R.id.btnLogin:
+			case R.id.login:
 				doTaskLogin();
 				break;
-			case R.id.btnRegister:
-				doTaskRegister();
-				break;
+//			case R.id.btnRegister:
+//				doTaskRegister();
+//				break;
 			}
 		}
 		
@@ -74,7 +75,14 @@ public class LoginUi extends BaseUi {
 	
 	@Override
 	public void onTaskComplete(int taskId, BaseMessage message){
-		this.finish();
+		//this.finish();
+		this.forward(MainActivity.class);
+	}
+	
+	@Override
+	public void onTaskError(){
+		this.toast("error login");
+		Log.i(C.debug.login, "login ui errorhandler");
 	}
 	
 }

@@ -1,6 +1,7 @@
 package com.app.ipinle.util;
 
 import java.io.IOException;
+import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -120,6 +121,8 @@ public class AppClient {
 				return null;
 			}
 		} catch (ConnectTimeoutException e) {
+			throw new Exception(C.err.network);
+		} catch(UnknownHostException e){
 			throw new Exception(C.err.network);
 		} catch (Exception e) {
 			e.printStackTrace();

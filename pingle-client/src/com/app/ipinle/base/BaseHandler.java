@@ -41,6 +41,7 @@ public class BaseHandler extends Handler {
 				case BaseTask.NETWORK_ERROR:
 					ui.hideLoadBar();
 					taskId = msg.getData().getInt("task");
+					Log.i(C.debug.login, "开始转发");
 					ui.onNetworkError(taskId);
 					break;
 				case BaseTask.SHOW_LOADBAR:

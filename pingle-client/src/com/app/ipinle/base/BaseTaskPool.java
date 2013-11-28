@@ -101,9 +101,12 @@ public class BaseTaskPool {
 					}
 				} catch (Exception e) {
 					baseTask.onError(e.getMessage());
+					Log.i(C.debug.login, "error happen");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
+				baseTask.onError(e.getMessage());
+				Log.i(C.debug.login, "error happen");
 			} finally {
 				try {
 					baseTask.onStop();
