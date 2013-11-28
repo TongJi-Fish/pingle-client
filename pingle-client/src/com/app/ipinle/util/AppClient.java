@@ -121,16 +121,16 @@ public class AppClient {
 				return null;
 			}
 		} catch (ConnectTimeoutException e) {
-			throw new Exception(C.err.network);
+			throw new Exception(C.err.network+"connect out of time");
 		} catch(UnknownHostException e){
-			throw new Exception(C.err.network);
+			throw new Exception(C.err.network+"unknown host");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	// ¹«ÓÃº¯Êý
+	// ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½
 	private HttpGet headerFilter (HttpGet httpGet) {
 		switch (this.compress) {
 			case CS_GZIP:

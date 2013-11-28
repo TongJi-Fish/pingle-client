@@ -59,9 +59,8 @@ public class LoginUi extends BaseUi {
 		if(this.userName.getText().length()>0 && this.userPassword.getText().length()>0){
 			HashMap<String, String> urlParams = new HashMap<String,String>();
 			urlParams.put("name", this.userName.getText().toString());
-			urlParams.put("password", this.userPassword.getText().toString());
+			urlParams.put("pwd", this.userPassword.getText().toString());
 			try{
-				Log.i(C.debug.login, "开始执行baseui的执行任务");
 				this.doTaskAsync(C.task.login, C.api.login, urlParams);
 			}catch(Exception e){
 				e.printStackTrace();
@@ -80,9 +79,10 @@ public class LoginUi extends BaseUi {
 	}
 	
 	@Override
-	public void onTaskError(){
+	public void onNetworkError(int taskId){
+		super.onTaskError();
 		this.toast("error login");
-		Log.i(C.debug.login, "login ui errorhandler");
+		Log.i(C.debug.login, "login loginUiActivity error");
 	}
 	
 }

@@ -40,7 +40,7 @@ public class BaseUi extends Activity {
 	}
 	
 	public void toast(String msg){
-		Toast.makeText(this, "msg", Toast.LENGTH_LONG);
+		Toast.makeText(this, "msg", Toast.LENGTH_LONG).show();
 	}
 	
 	public void hideLoadBar(){
@@ -50,6 +50,7 @@ public class BaseUi extends Activity {
 	}
 	
 	public void onNetworkError(int taskId){
+		Log.i(C.debug.login, "login baseUi error");
 	}
 	
 	
@@ -65,8 +66,7 @@ public class BaseUi extends Activity {
 		m.setData(b);
 		handler.sendMessage(m);
 		if(what==BaseTask.NETWORK_ERROR)
-		Log.i(C.debug.login, "what = NETWORK_ERROR");
-		Log.i(C.debug.login, "sendMessage");
+		Log.i(C.debug.login, "what = NETWORK_ERROR baseUi error");
 	}
 	
 	public void doTaskAsync (int taskId, String taskUrl, HashMap<String, String> taskArgs) {
@@ -79,6 +79,7 @@ public class BaseUi extends Activity {
 			@Override
 			public void onError (String error) {
 				sendMessage(BaseTask.NETWORK_ERROR, this.getId(), null);
+				Log.i(C.debug.login, error+"SHOWERROR");
 			}
 		}, 0);
 	}

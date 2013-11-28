@@ -2,7 +2,7 @@ package com.app.ipinle.base;
 
 public class C {
 	
-	public static final String hostname="localhosta";//"jackfishcat.xicp.net";
+	public static final String hostname="jackfishcat.xicp.net";
 //	
 //	
 //	////////////////////////////////////////////////////////////////////////////////////////////////
@@ -52,9 +52,9 @@ public class C {
 	}
 	
 	public static final class err {
-		public static final String network			= "网络错误";
-		public static final String message			= "消息错误";
-		public static final String jsonFormat		= "消息格式错误";
+		public static final String network			= "缃戠粶閿欒";
+		public static final String message			= "娑堟伅閿欒";
+		public static final String jsonFormat		= "娑堟伅鏍煎紡閿欒";
 	}
 	
 //	////////////////////////////////////////////////////////////////////////////////////////////////
