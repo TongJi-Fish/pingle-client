@@ -1,14 +1,14 @@
 package com.example.ipingle;
 
 import android.app.Activity;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.app.ipinle.ui.LoginUi;
+import com.app.ipinle.ui.TemplateUi;
 
 public class MainActivity extends Activity {
 
@@ -23,7 +23,8 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				forward(LoginUi.class);
+				//forward(LoginUi.class);
+				forward(TemplateUi.class);
 			}
 			
 		};

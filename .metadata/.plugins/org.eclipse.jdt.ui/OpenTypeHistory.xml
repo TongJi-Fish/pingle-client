@@ -1,2 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+<typeInfo handle="=pingle-client/D:\/coding\/adt-bundle-windows-x86_64-20130717\/sdk\/platforms\/android-17\/android.jar&lt;android.app(Activity.class[Activity" modifiers="33" timestamp="1360769583000"/>
+<typeInfo handle="=pingle-client/src&lt;com.app.ipinle.ui{TemplateUi.java[TemplateUi" modifiers="1" timestamp="1385665338645"/>
+</typeInfoHistroy>

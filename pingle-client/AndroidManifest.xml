@@ -58,6 +58,16 @@
             android:name="com.example.ipingle.RoutePlanActivity"
             android:label="@string/title_activity_route_plan" >
         </activity>
+        <activity android:name="com.app.ipinle.ui.TemplateUi">"
+        </activity>
+        <activity android:name="com.app.ipinle.ui.ShowBusRouteUi" >
+        </activity>
+        <activity android:name="com.app.ipinle.ui.CarPoolUi" >
+        </activity>
+"
+        <activity android:name="com.app.ipinle.ui.NavigationUi" >
+        </activity>
+"
     </application>
 
     <!-- For using network -->

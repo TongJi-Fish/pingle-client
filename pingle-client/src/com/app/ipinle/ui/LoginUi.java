@@ -12,7 +12,6 @@ import android.widget.EditText;
 import com.app.ipinle.base.BaseMessage;
 import com.app.ipinle.base.BaseUi;
 import com.app.ipinle.base.C;
-import com.example.ipingle.MainActivity;
 import com.example.ipingle.R;
 
 public class LoginUi extends BaseUi {
@@ -75,7 +74,9 @@ public class LoginUi extends BaseUi {
 	@Override
 	public void onTaskComplete(int taskId, BaseMessage message){
 		//this.finish();
-		this.forward(MainActivity.class);
+		//this.forward(MainActivity.class);
+		//this.forward(ShowBusRouteUi.class);//TemplateUi
+		this.forward(TemplateUi.class);
 	}
 	
 	@Override
