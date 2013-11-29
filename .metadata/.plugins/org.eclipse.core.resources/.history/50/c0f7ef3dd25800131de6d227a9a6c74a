@@ -1,0 +1,28 @@
+package com.app.ipinle.ui;
+
+import android.app.Activity;
+
+public class InitScreenUi extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+		WindowManager.LayoutParams.FLAG_FULLSCREEN);
+		
+		setContentView(R.layout.activity_init);
+		
+		final Intent intent = new Intent(this,LoginUi.class);
+		
+		Timer timer = new Timer();
+		TimerTask task = new TimerTask(){
+			@Override
+			public void run(){
+				startActivity(intent);
+			}
+		};
+		
+		timer.schedule(task, 2*1000);
+	}
+}

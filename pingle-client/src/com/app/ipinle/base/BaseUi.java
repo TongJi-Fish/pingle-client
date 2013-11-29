@@ -2,11 +2,13 @@ package com.app.ipinle.base;
 
 import java.util.HashMap;
 
-import android.R;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
+import android.widget.Toast;
 
 public class BaseUi extends Activity {
 
@@ -38,6 +40,7 @@ public class BaseUi extends Activity {
 	}
 	
 	public void toast(String msg){
+		Toast.makeText(this, "msg", Toast.LENGTH_LONG).show();
 	}
 	
 	public void hideLoadBar(){
@@ -47,6 +50,7 @@ public class BaseUi extends Activity {
 	}
 	
 	public void onNetworkError(int taskId){
+		Log.i(C.debug.login, "login baseUi error");
 	}
 	
 	
@@ -61,6 +65,8 @@ public class BaseUi extends Activity {
 		m.what = what;
 		m.setData(b);
 		handler.sendMessage(m);
+		if(what==BaseTask.NETWORK_ERROR)
+		Log.i(C.debug.login, "what = NETWORK_ERROR baseUi error");
 	}
 	
 	public void doTaskAsync (int taskId, String taskUrl, HashMap<String, String> taskArgs) {
@@ -73,13 +79,24 @@ public class BaseUi extends Activity {
 			@Override
 			public void onError (String error) {
 				sendMessage(BaseTask.NETWORK_ERROR, this.getId(), null);
+				Log.i(C.debug.login, error+"SHOWERROR");
 			}
 		}, 0);
+	}
+	
+	public void forward(Class<?> classObject){
+		Intent intent = new Intent();
+		intent.setClass(this, classObject);
+		startActivity(intent);
 	}
 	
 	public void onTaskComplete(int taskId){
 	}
 	
 	public void onTaskComplete(int taskId, BaseMessage message){
+	}
+	
+	public void onTaskError(){	
+		Log.i(C.debug.login,"base ui error");
 	}
 }

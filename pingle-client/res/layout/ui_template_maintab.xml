@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:gravity="bottom" >
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@drawable/maintab_toolbar_bg"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/radio_button0"
+            style="@style/main_tab_bottom"
+            android:layout_marginTop="2.0dip"
+            android:checked="true"
+            android:drawableTop="@drawable/icon_1_n"
+            android:tag="radio_button0"
+            android:text="公交路线" />
+
+        <RadioButton
+            android:id="@+id/radio_button1"
+            style="@style/main_tab_bottom"
+            android:layout_marginTop="2.0dip"
+            android:drawableTop="@drawable/icon_2_n"
+            android:tag="radio_button1"
+            android:text="拼车" />
+
+        <RadioButton
+            android:id="@+id/radio_button2"
+            style="@style/main_tab_bottom"
+            android:layout_marginTop="2.0dip"
+            android:drawableTop="@drawable/icon_3_n"
+            android:tag="radio_button2"
+            android:text="导航" />
+    </RadioGroup>
+
+</LinearLayout>

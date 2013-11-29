@@ -17,7 +17,7 @@ public class C {
 	public static final class api {
 		public static final String base				= "http://"+hostname;
 //		public static final String index			= "/index/index";
-		public static final String login			= "/ipingle.php/authentication/test";
+		public static final String login			= "/index.php/usercontrol/login";
 //		public static final String logout			= "/index/logout";
 //		public static final String faceView 		= "/image/faceView";
 //		public static final String faceList 		= "/image/faceList";
@@ -52,9 +52,9 @@ public class C {
 	}
 	
 	public static final class err {
-		public static final String network			= "网络错误";
-		public static final String message			= "消息错误";
-		public static final String jsonFormat		= "消息格式错误";
+		public static final String network			= "缃戠粶閿欒";
+		public static final String message			= "娑堟伅閿欒";
+		public static final String jsonFormat		= "娑堟伅鏍煎紡閿欒";
 	}
 	
 //	////////////////////////////////////////////////////////////////////////////////////////////////

@@ -65,7 +65,7 @@ public class BaseTaskPool {
 			this.taskArgs = taskArgs;
 			this.baseTask = baseTask;
 			this.delayTime = delayTime;
-			Log.i(C.debug.BaseTaskPool,this.context.toString()+" "+this.taskUrl+" "+this.taskArgs.toString()+" "+this.baseTask.toString());
+			//Log.i(C.debug.BaseTaskPool,this.context.toString()+" "+this.taskUrl+" "+this.taskArgs.toString()+" "+this.baseTask.toString());
 		}
 		@Override
 		public void run() {
@@ -89,21 +89,29 @@ public class BaseTaskPool {
 							httpResult = client.get();
 						// http post
 						} else {
+							Log.i(C.debug.login, "before do post");
 							httpResult = client.post(this.taskArgs);
 						}
 					}
 					// remote task
 					if (httpResult != null) {
+						Log.i(C.debug.login, "not null----after do post before complete");
 						baseTask.onComplete(httpResult);
 					// local task
 					} else {
+						Log.i(C.debug.login, "is null----after do post before complete");
 						baseTask.onComplete();
 					}
 				} catch (Exception e) {
 					baseTask.onError(e.getMessage());
+					Log.i(C.debug.login,"error:"+e.toString()+"message:"+e.getMessage().toString());
+					Log.i(C.debug.login,"error get e 你好");
+					Log.i(C.debug.login, "login baseTaskPool error1");
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
+				baseTask.onError(e.getMessage());
+				Log.i(C.debug.login, "login baseTaskPool error2");
 			} finally {
 				try {
 					baseTask.onStop();

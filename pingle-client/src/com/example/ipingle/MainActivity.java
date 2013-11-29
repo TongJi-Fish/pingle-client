@@ -1,15 +1,14 @@
 package com.example.ipingle;
 
 import android.app.Activity;
-import android.view.View;
-import android.view.View.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.app.ipinle.ui.LoginUi;
-
+import com.app.ipinle.ui.InitScreenUi;
 public class MainActivity extends Activity {
 
 	@Override
@@ -23,13 +22,24 @@ public class MainActivity extends Activity {
 
 			@Override
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				forward(LoginUi.class);
+				//forward(LoginUi.class);
+				//forward(LoginUi.class);
+				//forward(TemplateUi.class);
+				forward(InitScreenUi.class);
 			}
 			
 		};
 		
 		button.setOnClickListener((android.view.View.OnClickListener) mOnClickListener);
+		
+		Button routePlanButton = (Button) findViewById(R.id.routePlanButton);
+		routePlanButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(MainActivity.this, RoutePlanActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 	
 	@Override
