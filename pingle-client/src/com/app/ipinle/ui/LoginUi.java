@@ -76,6 +76,9 @@ public class LoginUi extends BaseUi {
 	public void onTaskComplete(int taskId, BaseMessage message){
 		//this.finish();
 		this.forward(MainActivity.class);
+		//this.forward(MainActivity.class);
+		//this.forward(ShowBusRouteUi.class);//TemplateUi
+		this.forward(TemplateUi.class);
 	}
 	
 	@Override

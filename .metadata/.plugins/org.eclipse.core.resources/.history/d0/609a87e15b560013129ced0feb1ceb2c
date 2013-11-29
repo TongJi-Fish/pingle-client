@@ -1,0 +1,52 @@
+package com.app.ipinle.base;
+
+import android.R;
+import android.app.Activity;
+import android.os.Bundle;
+
+public class BaseUi extends Activity {
+
+	protected BaseApp app;
+	protected BaseHandler handler;
+	//protected BaseTaskPool taskPool;
+	protected boolean showLoadBar = false;
+	protected boolean showDebugMsg = true;
+	
+	/** Called when the activity is first created. */
+	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		// debug memory
+		//debugMemory("onCreate");
+		// async task handler
+		this.handler = new BaseHandler(this);
+		// init task pool
+		//this.taskPool = new BaseTaskPool(this);
+		// init application
+//		this.app = (BaseApp) this.getApplicationContext();
+	}
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	// util method
+	
+	public void toast(String msg){
+	}
+	
+	public void hideLoadBar(){
+	}
+	
+	public void showLoadBar(){
+	}
+	
+	public void onNetworkError(int taskId){
+	}
+	
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////
+	// logic method
+	public void onTaskComplete(int taskId){
+	}
+	
+	public void onTaskComplete(int taskId, BaseMessage message){
+	}
+}

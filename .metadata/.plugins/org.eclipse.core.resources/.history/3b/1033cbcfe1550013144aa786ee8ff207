@@ -1,0 +1,5 @@
+package com.app.ipinle.base;
+
+public class BaseMessage {
+
+}

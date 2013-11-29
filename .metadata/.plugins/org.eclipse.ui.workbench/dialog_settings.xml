@@ -12,6 +12,12 @@
 		<list key="textEntries">
 		</list>
 	</section>
+<<<<<<< HEAD
 	<section name="ImportExportAction">
+=======
+	<section name="WorkbenchPreferenceDialogSettings">
+		<item value="8" key="DIALOG_Y_ORIGIN"/>
+		<item value="339" key="DIALOG_X_ORIGIN"/>
+>>>>>>> 38cfe308507d5ddbf0351324f3fc61dd0dbc46ee
 	</section>
 </section>

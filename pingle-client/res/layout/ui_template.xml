@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget41"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffffff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/widget42"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="#ff66ccff"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/widget43"
+            android:layout_width="78dp"
+            android:layout_height="31dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="15dp"
+            android:text="e 拼"
+            android:textSize="30sp"
+            android:typeface="serif" >
+        </TextView>
+    </LinearLayout>
+
+    <!-- TabHost必须包含一个 TabWidget和一个FrameLayout -->
+
+    <TabHost
+        android:id="@+id/myTabHost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="0.0dip"
+                android:layout_weight="1.0" />
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:visibility="gone" />
+
+            <RadioGroup
+                android:id="@+id/main_radio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:background="@drawable/maintab_toolbar_bg"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/radio_button0"
+                    style="@style/main_tab_bottom"
+                    android:layout_marginTop="2.0dip"
+                    android:checked="true"
+                    android:drawableTop="@drawable/icon_1_n"
+                    android:tag="radio_button0"
+                    android:text="公交路线" />
+
+                <RadioButton
+                    android:id="@+id/radio_button1"
+                    style="@style/main_tab_bottom"
+                    android:layout_marginTop="2.0dip"
+                    android:drawableTop="@drawable/icon_2_n"
+                    android:tag="radio_button1"
+                    android:text="拼车" />
+
+                <RadioButton
+                    android:id="@+id/radio_button2"
+                    style="@style/main_tab_bottom"
+                    android:layout_marginTop="2.0dip"
+                    android:drawableTop="@drawable/icon_3_n"
+                    android:tag="radio_button2"
+                    android:text="导航" />
+            </RadioGroup>
+        </LinearLayout>
+    </TabHost>
+
+</LinearLayout>
