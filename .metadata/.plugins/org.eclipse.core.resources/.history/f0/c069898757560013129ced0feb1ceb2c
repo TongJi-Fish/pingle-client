@@ -1,7 +1,0 @@
-package com.example.ipingle;
-
-import android.app.Activity;
-
-public class test extends Activity {
-
-}

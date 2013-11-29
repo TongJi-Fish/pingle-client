@@ -3,22 +3,25 @@ package com.app.ipinle.util;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.graphics.Bitmap;
+import android.view.View;
+
 import com.app.ipinle.base.BaseMessage;
 import com.app.ipinle.model.User;
 
 public class AppUtil {
 
-	/////////////////////////////////////////////////////////////////////////////////
-	// ÒµÎñÂß¼­
-	
-	/* »ñÈ¡ Session Id */
-	static public String getSessionId () {
+	// ///////////////////////////////////////////////////////////////////////////////
+	// Òµï¿½ï¿½ï¿½ß¼ï¿½
+
+	/* ï¿½ï¿½È¡ Session Id */
+	static public String getSessionId() {
 		User customer = User.getInstance();
 		return customer.getSid();
 	}
-	
-	/* »ñÈ¡ Message */
-	static public BaseMessage getMessage (String jsonStr) throws Exception {
+
+	/* ï¿½ï¿½È¡ Message */
+	static public BaseMessage getMessage(String jsonStr) throws Exception {
 		BaseMessage message = new BaseMessage();
 		JSONObject jsonObject = null;
 		try {
@@ -35,10 +38,27 @@ public class AppUtil {
 		}
 		return message;
 	}
-	
-	/* ÅÐ¶ÏintÊÇ·ñÎª¿Õ */
-	static public boolean isEmptyInt (int v) {
+
+	/* ï¿½Ð¶ï¿½intï¿½Ç·ï¿½Îªï¿½ï¿½ */
+	static public boolean isEmptyInt(int v) {
 		Integer t = new Integer(v);
 		return t == null ? true : false;
+	}
+
+	/**
+	 * ä»Žview å¾—åˆ°å›¾ç‰‡
+	 * 
+	 * @param view
+	 * @return
+	 */
+	public static Bitmap getBitmapFromView(View view) {
+		view.destroyDrawingCache();
+		view.measure(View.MeasureSpec.makeMeasureSpec(0,
+				View.MeasureSpec.UNSPECIFIED), View.MeasureSpec
+				.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED));
+		view.layout(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight());
+		view.setDrawingCacheEnabled(true);
+		Bitmap bitmap = view.getDrawingCache(true);
+		return bitmap;
 	}
 }

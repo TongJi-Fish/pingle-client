@@ -1,9 +1,0 @@
-package com.app.ipinle.util;
-
-public class AppClient {
-
-	// logic variables
-	private String apiUrl;
-	private HttpParams httpParams;
-	private HttpClient httpClient;
-}
