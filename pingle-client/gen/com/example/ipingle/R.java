@@ -34,14 +34,16 @@ public final class R {
         public static final int icon_3_n=0x7f02000a;
         public static final int icon_en=0x7f02000b;
         public static final int icon_st=0x7f02000c;
-        public static final int main_background=0x7f02000d;
-        public static final int maintab_toolbar_bg=0x7f02000e;
-        public static final int next_=0x7f02000f;
-        public static final int popup=0x7f020010;
-        public static final int popup_down=0x7f020011;
-        public static final int popup_middle=0x7f020012;
-        public static final int popup_side=0x7f020013;
-        public static final int pre_=0x7f020014;
+        public static final int init_background=0x7f02000d;
+        public static final int logo=0x7f02000e;
+        public static final int main_background=0x7f02000f;
+        public static final int maintab_toolbar_bg=0x7f020010;
+        public static final int next_=0x7f020011;
+        public static final int popup=0x7f020012;
+        public static final int popup_down=0x7f020013;
+        public static final int popup_middle=0x7f020014;
+        public static final int popup_side=0x7f020015;
+        public static final int pre_=0x7f020016;
     }
     public static final class id {
         public static final int action_settings=0x7f080020;
@@ -85,11 +87,12 @@ public final class R {
         public static final int activity_route_plan=0x7f030002;
         public static final int custom_text_view=0x7f030003;
         public static final int ui_carpool=0x7f030004;
-        public static final int ui_navigation=0x7f030005;
-        public static final int ui_show_bus_route=0x7f030006;
-        public static final int ui_template=0x7f030007;
-        public static final int ui_template_maintab=0x7f030008;
-        public static final int ui_template_title=0x7f030009;
+        public static final int ui_init_screen=0x7f030005;
+        public static final int ui_navigation=0x7f030006;
+        public static final int ui_show_bus_route=0x7f030007;
+        public static final int ui_template=0x7f030008;
+        public static final int ui_template_maintab=0x7f030009;
+        public static final int ui_template_title=0x7f03000a;
     }
     public static final class menu {
         public static final int main=0x7f070000;

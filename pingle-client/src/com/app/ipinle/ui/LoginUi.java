@@ -4,15 +4,16 @@ import java.util.HashMap;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.app.ipinle.base.BaseMessage;
 import com.app.ipinle.base.BaseUi;
 import com.app.ipinle.base.C;
-import com.example.ipingle.MainActivity;
 import com.example.ipingle.R;
 
 public class LoginUi extends BaseUi {
@@ -21,6 +22,7 @@ public class LoginUi extends BaseUi {
 	private EditText userPassword;
 	private Button loginBtn;
 	private Button registerBtn;
+	private long exitTime = 0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
@@ -75,7 +77,7 @@ public class LoginUi extends BaseUi {
 	@Override
 	public void onTaskComplete(int taskId, BaseMessage message){
 		//this.finish();
-		this.forward(MainActivity.class);
+		//this.forward(MainActivity.class);
 		//this.forward(MainActivity.class);
 		//this.forward(ShowBusRouteUi.class);//TemplateUi
 		this.forward(TemplateUi.class);
@@ -88,4 +90,24 @@ public class LoginUi extends BaseUi {
 		Log.i(C.debug.login, "login loginUiActivity error");
 	}
 	
+	/*
+	 * (non-Javadoc)click back twice and leave this application
+	 * @see android.app.Activity#onKeyDown(int, android.view.KeyEvent)
+	 */
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+	    if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+
+	    if((System.currentTimeMillis()-exitTime) > 2000){
+	        Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                exitTime = System.currentTimeMillis();
+	    }
+	    else{
+	        finish();
+	        System.exit(0);
+	        }
+
+	    return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
 }
