@@ -1,0 +1,54 @@
+package com.app.ipinle.ui;
+
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+
+import com.app.ipinle.base.BaseUi;
+import com.example.ipingle.R;
+
+public class LoginUi extends BaseUi {
+
+	private EditText userName;
+	private EditText userPassword;
+	private Button loginBtn;
+	private Button registerBtn;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_login);
+		initial();
+	}
+	
+	public void initial(){
+		this.userName = (EditText) findViewById(R.id.etAccount);
+		this.userPassword = (EditText) findViewById(R.id.etPassword);
+		this.loginBtn = (Button) findViewById(R.id.btnLogin);
+		this.registerBtn = (Button) findViewById(R.id.btnRegister);
+	}
+	
+	OnClickListener mOnClickListener = new OnClickListener(){
+
+		@Override
+		public void onClick(View v) {
+			// TODO Auto-generated method stub
+			switch(v.getId()){
+			case R.id.btnLogin:
+				doTaskLogin();
+				break;
+			case R.id.btnRegister:
+				break;
+			}
+		}
+		
+	};
+	
+	public void doTaskLogin(){
+		if(this.userName.getText().length()>0 && this.userPassword.getText().length()>0){
+			HushMap<String, String> urlParams = new HushMap<String,String>();
+		}
+	}
+}
