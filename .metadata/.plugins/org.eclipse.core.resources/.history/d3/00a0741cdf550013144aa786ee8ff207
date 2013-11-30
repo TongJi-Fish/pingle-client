@@ -1,7 +1,0 @@
-package com.app.ipinle.base;
-
-import android.os.Handler;
-
-public class BaseHandler extends Handler {
-
-}
