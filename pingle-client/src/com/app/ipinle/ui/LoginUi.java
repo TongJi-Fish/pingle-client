@@ -66,6 +66,7 @@ public class LoginUi extends BaseUi {
 			urlParams.put("pwd", this.userPassword.getText().toString());
 			try{
 				this.showLoadBar();
+				this.lockScreen();// 锁定屏幕，登陆过程中不能点击btn，不能编辑et
 				this.doTaskAsync(C.task.login, C.api.login, urlParams);
 			}catch(Exception e){
 				e.printStackTrace();
@@ -104,6 +105,8 @@ public class LoginUi extends BaseUi {
 					e.printStackTrace();
 					Log.i(C.debug.login, "2");
 					this.toast(e.getMessage());
+				}finally{
+					this.unLockScreen();
 				}
 				// turn to index
 				if (AppUser.isLogin()) {
@@ -122,6 +125,7 @@ public class LoginUi extends BaseUi {
 	public void onNetworkError(int taskId){
 		super.onTaskError();
 		this.hideLoadBar();
+		this.unLockScreen();
 	}
 	
 	/*
@@ -131,6 +135,7 @@ public class LoginUi extends BaseUi {
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 	    if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
+	    	this.unLockScreen();
 
 	    if((System.currentTimeMillis()-exitTime) > 2000){
 	        Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                
@@ -144,5 +149,27 @@ public class LoginUi extends BaseUi {
 	    return true;
 	    }
 	    return super.onKeyDown(keyCode, event);
+	}
+	
+	public void lockScreen(){
+		if(this.userName!=null)
+			this.userName.setEnabled(false);
+		if(this.userPassword!=null)
+			this.userPassword.setEnabled(false);
+		if(this.loginBtn!=null)
+			this.loginBtn.setEnabled(false);
+		if(this.registerBtn!=null)
+			this.registerBtn.setEnabled(false);
+	}
+	
+	public void unLockScreen(){
+		if(this.userName!=null)
+			this.userName.setEnabled(true);
+		if(this.userPassword!=null)
+			this.userPassword.setEnabled(true);
+		if(this.loginBtn!=null)
+			this.loginBtn.setEnabled(true);
+		if(this.registerBtn!=null)
+			this.registerBtn.setEnabled(true);
 	}
 }
