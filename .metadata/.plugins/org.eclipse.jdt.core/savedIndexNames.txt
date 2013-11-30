@@ -1,0 +1,5 @@
+INDEX VERSION 1.126+E:\ProgrammingDocument\homework\junior\softwareengineering\pingle\pingle-client\.metadata\.plugins\org.eclipse.jdt.core
+2124492106.index
+691202502.index
+2861247197.index
+409176728.index

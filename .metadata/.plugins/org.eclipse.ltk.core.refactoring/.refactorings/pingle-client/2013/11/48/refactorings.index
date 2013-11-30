@@ -1,0 +1,16 @@
+1385389722408	Rename package 'com.app.ipingle.ui'
+1385440236534	Rename resource 'activity_weibo.xml'
+1385441968732	Delete element
+1385662255728	Delete elements
+1385728318761	Delete element
+1385728325148	Delete element
+1385728332098	Delete element
+1385732697132	Delete element
+1385732757908	Delete element
+1385735410476	Encapsulate field 'id_num'
+1385735418657	Encapsulate field 'driver_id'
+1385736120852	Rename type 'BaseUser'
+1385736226348	Delete element
+1385740568197	Delete element
+1385802006079	Rename resource 'home_btn_bg_n.png'
+1385802096716	Delete element

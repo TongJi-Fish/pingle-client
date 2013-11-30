@@ -14,13 +14,13 @@ public class AppUtil {
 	// ///////////////////////////////////////////////////////////////////////////////
 	// ҵ���߼�
 
-	/* ��ȡ Session Id */
+	/* 获取  Session Id */
 	static public String getSessionId() {
 		User customer = User.getInstance();
 		return customer.getSid();
 	}
 
-	/* ��ȡ Message */
+	/* 将json格式信息转化为  Message */
 	static public BaseMessage getMessage(String jsonStr) throws Exception {
 		BaseMessage message = new BaseMessage();
 		JSONObject jsonObject = null;
@@ -60,5 +60,13 @@ public class AppUtil {
 		view.setDrawingCacheEnabled(true);
 		Bitmap bitmap = view.getDrawingCache(true);
 		return bitmap;
+	}
+	
+	/* 首字母大写 */
+	static public String ucfirst (String str) {
+		if (str != null && str != "") {
+			str  = str.substring(0,1).toUpperCase()+str.substring(1);
+		}
+		return str;
 	}
 }

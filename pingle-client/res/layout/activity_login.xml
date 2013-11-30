@@ -52,5 +52,8 @@
         android:textStyle="bold"
         android:typeface="serif" >
     </Button>
+    
+    <include layout="@layout/ui_load_bar" ></include>
+        
 
 </LinearLayout>
