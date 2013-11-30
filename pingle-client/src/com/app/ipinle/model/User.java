@@ -1,6 +1,8 @@
 package com.app.ipinle.model;
 
-public class User {
+import com.app.ipinle.base.*;
+
+public class User extends BaseModel{
 
 	// model columns
 	public final static String COL_ID = "id";

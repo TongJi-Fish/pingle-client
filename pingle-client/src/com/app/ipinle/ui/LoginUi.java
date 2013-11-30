@@ -70,6 +70,10 @@ public class LoginUi extends BaseUi {
 			}catch(Exception e){
 				e.printStackTrace();
 			}
+		}else if(this.userName.getText().length()>0){
+			this.toast("请输入密码！");
+		}else{
+			this.toast("请输入用户名！");
 		}
 	}
 	
@@ -94,8 +98,7 @@ public class LoginUi extends BaseUi {
 					} else {
 						AppUser.setUser(user); // set sid
 						AppUser.setLogin(false);
-						this.toast("login info error");//C.err.loginFailed);
-						Log.i(C.debug.login, "1");
+						this.toast(C.err.loginFailed);
 					}
 				} catch (Exception e) {
 					e.printStackTrace();
