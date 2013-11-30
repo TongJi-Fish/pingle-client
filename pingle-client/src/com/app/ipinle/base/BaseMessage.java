@@ -1,11 +1,9 @@
 package com.app.ipinle.base;
 
-import java.util.Iterator;
+import java.util.ArrayList;
+import java.util.Map;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
-
-import android.util.Log;
 
 import com.app.ipinle.model.User;
 import com.app.ipinle.util.AppUtil;
@@ -15,6 +13,8 @@ public class BaseMessage {
 	private String code;
 	private String message;
 	private String resultSrc;
+	private Map<String, BaseModel> resultMap;
+	private Map<String, ArrayList<? extends BaseModel>> resultList;
 	
 	/*@Override
 	public String toString () {
@@ -42,38 +42,16 @@ public class BaseMessage {
 	}
 	
 	public Object getResult (String modelName) throws Exception {
-//		Object model = this.resultMap.get(modelName);
-//		// catch null exception
-//		if (model == null) {
-//			throw new Exception("Message data is empty");
-//		}
-//		return model;
+		Object model = this.resultMap.get(modelName);
+		// catch null exception
+		if (model == null) {
+			throw new Exception("Message data is empty");
+		}
+		return model;
 		
 		//resultStr: {"User":{"id":"aaaaaayyyymmddxxxx",
 		//"sid":"k66b46404orragqt7arkqbdd43","driver_id":null,"name":"jack"}}
 		
-		if (this.resultSrc.length() > 0) {
-			JSONObject jsonObject = null;
-			jsonObject = new JSONObject(this.resultSrc);
-			Iterator<String> it = jsonObject.keys();
-			while (it.hasNext()) {
-				// initialize
-				String jsonKey = it.next();
-				String modelName1 = getModelName(jsonKey);
-				String modelClassName = "com.app.demos.model." + modelName1;
-				Log.i(C.debug.login, "modelClassName="+modelClassName);
-				JSONArray modelJsonArray = jsonObject.optJSONArray(jsonKey);
-				// JSONObject
-				if (modelJsonArray == null) {
-					JSONObject modelJsonObject = jsonObject.optJSONObject(jsonKey);
-					if (modelJsonObject == null) {
-						throw new Exception("Message result is invalid");
-					}
-					this.resultMap.put(modelName, json2model(modelClassName, modelJsonObject));
-					Log.i(C.debug.login, "modelJsonArray is null");
-				}
-			}
-		}
 		
 		
 		return null;
@@ -126,21 +104,12 @@ public class BaseMessage {
 		if(modelClassName=="User"){
 			User user = User.getInstance();
 			user.setId(modelJsonObject.getString("id"));
-			user.setId_num(modelJsonObject.getString("id_num"));
+			user.setSid(modelJsonObject.getString("sid"));
+			user.setDriver_id(modelJsonObject.getString("driver_id"));
+			user.setName(modelJsonObject.getString("name"));
+			return user;
+		}else{
+			return null;
 		}
-		
-		// auto-load model class
-		BaseModel modelObj = (BaseModel) Class.forName(modelClassName).newInstance();
-		Class<? extends BaseModel> modelClass = modelObj.getClass();
-		// auto-setting model fields
-		Iterator<String> it = modelJsonObject.keys();
-		while (it.hasNext()) {
-			String varField = it.next();
-			String varValue = modelJsonObject.getString(varField);
-			Field field = modelClass.getDeclaredField(varField);
-			field.setAccessible(true); // have private to be accessable
-			field.set(modelObj, varValue);
-		}
-		return modelObj;
 	}
 }
