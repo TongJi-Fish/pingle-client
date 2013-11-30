@@ -14,6 +14,8 @@ import android.widget.Toast;
 import com.app.ipinle.base.BaseMessage;
 import com.app.ipinle.base.BaseUi;
 import com.app.ipinle.base.C;
+import com.app.ipinle.model.User;
+import com.app.ipinle.util.AppUser;
 import com.example.ipingle.R;
 
 public class LoginUi extends BaseUi {
@@ -63,6 +65,7 @@ public class LoginUi extends BaseUi {
 			urlParams.put("name", this.userName.getText().toString());
 			urlParams.put("pwd", this.userPassword.getText().toString());
 			try{
+				this.showLoadBar();
 				this.doTaskAsync(C.task.login, C.api.login, urlParams);
 			}catch(Exception e){
 				e.printStackTrace();
@@ -76,18 +79,46 @@ public class LoginUi extends BaseUi {
 	
 	@Override
 	public void onTaskComplete(int taskId, BaseMessage message){
-		//this.finish();
-		//this.forward(MainActivity.class);
-		//this.forward(MainActivity.class);
-		//this.forward(ShowBusRouteUi.class);//TemplateUi
-		this.forward(TemplateUi.class);
+		super.onTaskComplete(taskId, message);
+		switch (taskId) {
+			case C.task.login:
+				User user = null;
+				// login logic
+				try {
+					user = (User) message.getResult("User");
+					// login success
+					if (user != null && user.getName() != null) {
+						AppUser.setUser(user);
+						AppUser.setLogin(true);
+					// login fail
+					} else {
+						AppUser.setUser(user); // set sid
+						AppUser.setLogin(false);
+						this.toast("login info error");//C.err.loginFailed);
+						Log.i(C.debug.login, "1");
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					Log.i(C.debug.login, "2");
+					this.toast(e.getMessage());
+				}
+				// turn to index
+				if (AppUser.isLogin()) {
+					// start service
+					//BaseService.start(this, NoticeService.class);
+					// turn to index
+					// close load bar
+					this.hideLoadBar();
+					this.forward(TemplateUi.class);
+				}
+				break;
+		}
 	}
 	
 	@Override
 	public void onNetworkError(int taskId){
 		super.onTaskError();
-		this.toast("error login");
-		Log.i(C.debug.login, "login loginUiActivity error");
+		this.hideLoadBar();
 	}
 	
 	/*
@@ -99,7 +130,8 @@ public class LoginUi extends BaseUi {
 	    if(keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN){
 
 	    if((System.currentTimeMillis()-exitTime) > 2000){
-	        Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                exitTime = System.currentTimeMillis();
+	        Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();                                
+	        exitTime = System.currentTimeMillis();
 	    }
 	    else{
 	        finish();

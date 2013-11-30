@@ -73,14 +73,14 @@ public class AppClient {
 	
 	public String get () throws Exception {
 		try {
-			HttpGet httpGet = headerFilter(new HttpGet(this.apiUrl));
-			Log.w("AppClient.get.url", this.apiUrl);
+			HttpGet httpGet = new HttpGet(this.apiUrl);
+			//Log.w("AppClient.get.url", this.apiUrl);
 			// send get request
 			HttpResponse httpResponse = httpClient.execute(httpGet);
 			if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
 				//String httpResult = resultFilter(httpResponse.getEntity());
-				String httpResult = resultFilter(httpResponse.getEntity());
-				Log.w("AppClient.get.result", httpResult);
+				String httpResult = EntityUtils.toString(httpResponse.getEntity());
+				//Log.w("AppClient.get.result", httpResult);
 				return httpResult;
 			} else {
 				return null;
@@ -95,7 +95,7 @@ public class AppClient {
 	
 	public String post (HashMap urlParams) throws Exception {
 		try {
-			HttpPost httpPost = headerFilter(new HttpPost(this.apiUrl));
+			HttpPost httpPost = new HttpPost(this.apiUrl);
 			List<NameValuePair> postParams = new ArrayList<NameValuePair>();
 			// get post parameters
 			Iterator it = urlParams.entrySet().iterator();
@@ -109,13 +109,10 @@ public class AppClient {
 			} else {
 				httpPost.setEntity(new UrlEncodedFormEntity(postParams));
 			}
-			Log.w("AppClient.post.url", this.apiUrl);
-			Log.w("AppClient.post.data", postParams.toString());
-			// send post request
+			
 			HttpResponse httpResponse = httpClient.execute(httpPost);
 			if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-				String httpResult = resultFilter(httpResponse.getEntity());
-				Log.w("AppClient.post.result", httpResult);
+				String httpResult = EntityUtils.toString(httpResponse.getEntity());
 				return httpResult;
 			} else {
 				return null;
@@ -128,45 +125,5 @@ public class AppClient {
 			e.printStackTrace();
 		}
 		return null;
-	}
-	
-	// ���ú���
-	private HttpGet headerFilter (HttpGet httpGet) {
-		switch (this.compress) {
-			case CS_GZIP:
-				httpGet.addHeader("Accept-Encoding", "gzip");
-				break;
-			default :
-				break;
-		}
-		return httpGet;
-	}
-	
-	private HttpPost headerFilter (HttpPost httpPost) {
-		switch (this.compress) {
-			case CS_GZIP:
-				httpPost.addHeader("Accept-Encoding", "gzip");
-				break;
-			default :
-				break;
-		}
-		return httpPost;
-	}
-	
-	private String resultFilter(HttpEntity entity){
-		String result = null;
-		try {
-//			switch (this.compress) {
-//				case CS_GZIP:
-//					result = AppUtil.gzipToString(entity);
-//					break;
-//				default :
-					result = EntityUtils.toString(entity);
-//					break;
-//			}
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return result;
 	}
 }

@@ -46,26 +46,27 @@ public final class R {
         public static final int pre_=0x7f020016;
     }
     public static final class id {
-        public static final int action_settings=0x7f080020;
+        public static final int action_settings=0x7f080021;
         public static final int bmapView=0x7f08000e;
         public static final int custombutton=0x7f08000f;
         public static final int customicon=0x7f080010;
         public static final int drive=0x7f08000b;
         public static final int end=0x7f08000a;
         public static final int login=0x7f080004;
-        public static final int main_radio=0x7f08001c;
-        public static final int myTabHost=0x7f08001b;
+        public static final int main_load_bar=0x7f080018;
+        public static final int main_radio=0x7f08001d;
+        public static final int myTabHost=0x7f08001c;
         public static final int next=0x7f080012;
         public static final int popdown=0x7f080016;
         public static final int popinfo=0x7f080014;
         public static final int popleft=0x7f080013;
         public static final int popright=0x7f080017;
         public static final int pre=0x7f080011;
-        public static final int radio_button0=0x7f08001d;
-        public static final int radio_button1=0x7f08001e;
-        public static final int radio_button2=0x7f08001f;
+        public static final int radio_button0=0x7f08001e;
+        public static final int radio_button1=0x7f08001f;
+        public static final int radio_button2=0x7f080020;
         public static final int routePlanButton=0x7f080005;
-        public static final int searchItem=0x7f080021;
+        public static final int searchItem=0x7f080022;
         public static final int searchLinearLayout=0x7f080006;
         public static final int start=0x7f080008;
         public static final int textView1=0x7f080007;
@@ -77,9 +78,9 @@ public final class R {
         public static final int walk=0x7f08000d;
         public static final int widget33=0x7f080000;
         public static final int widget34=0x7f080001;
-        public static final int widget41=0x7f080018;
-        public static final int widget42=0x7f080019;
-        public static final int widget43=0x7f08001a;
+        public static final int widget41=0x7f080019;
+        public static final int widget42=0x7f08001a;
+        public static final int widget43=0x7f08001b;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
@@ -88,11 +89,12 @@ public final class R {
         public static final int custom_text_view=0x7f030003;
         public static final int ui_carpool=0x7f030004;
         public static final int ui_init_screen=0x7f030005;
-        public static final int ui_navigation=0x7f030006;
-        public static final int ui_show_bus_route=0x7f030007;
-        public static final int ui_template=0x7f030008;
-        public static final int ui_template_maintab=0x7f030009;
-        public static final int ui_template_title=0x7f03000a;
+        public static final int ui_load_bar=0x7f030006;
+        public static final int ui_navigation=0x7f030007;
+        public static final int ui_show_bus_route=0x7f030008;
+        public static final int ui_template=0x7f030009;
+        public static final int ui_template_maintab=0x7f03000a;
+        public static final int ui_template_title=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f070000;
