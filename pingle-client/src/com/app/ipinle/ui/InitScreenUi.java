@@ -3,13 +3,13 @@ package com.app.ipinle.ui;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.example.ipingle.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-
-import com.example.ipingle.R;
 
 public class InitScreenUi extends Activity {
 
@@ -22,7 +22,7 @@ public class InitScreenUi extends Activity {
 		
 		setContentView(R.layout.ui_init_screen);
 		
-		final Intent intent = new Intent(this,LoginUi.class);
+		final Intent intent = new Intent(this,TemplateUi.class);
 		
 		Timer timer = new Timer();
 		TimerTask task = new TimerTask(){

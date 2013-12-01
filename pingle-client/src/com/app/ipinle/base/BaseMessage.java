@@ -1,11 +1,5 @@
 package com.app.ipinle.base;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 public class BaseMessage {
 	
 	private String code;

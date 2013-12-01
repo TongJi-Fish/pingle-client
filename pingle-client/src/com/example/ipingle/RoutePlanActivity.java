@@ -128,6 +128,7 @@ public class RoutePlanActivity extends Activity {
 
 		// 按键点击事件
 		OnClickListener clickListener = new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				if (searchLinearLayout.getVisibility() == View.VISIBLE) {
 					collapse(searchLinearLayout);
@@ -137,12 +138,14 @@ public class RoutePlanActivity extends Activity {
 			}
 		};
 		OnClickListener nodeClickListener = new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				// 浏览路线节点
 				nodeClick(v);
 			}
 		};
 		OnClickListener customClickListener = new OnClickListener() {
+			@Override
 			public void onClick(View v) {
 				// 自设路线绘制示例
 				intentToActivity();
@@ -258,6 +261,7 @@ public class RoutePlanActivity extends Activity {
 	}
 
 	class MySearchListener implements MKSearchListener {
+		@Override
 		public void onGetDrivingRouteResult(MKDrivingRouteResult res, int error) {
 			// 起点或终点有歧义，需要选择具体的城市列表或地址列表
 			if (error == MKEvent.ERROR_ROUTE_ADDR) {
@@ -303,6 +307,7 @@ public class RoutePlanActivity extends Activity {
 			mBtnNext.setVisibility(View.VISIBLE);
 		}
 
+		@Override
 		public void onGetTransitRouteResult(MKTransitRouteResult res, int error) {
 			// 起点或终点有歧义，需要选择具体的城市列表或地址列表
 			if (error == MKEvent.ERROR_ROUTE_ADDR) {
@@ -347,6 +352,7 @@ public class RoutePlanActivity extends Activity {
 			mBtnNext.setVisibility(View.VISIBLE);
 		}
 
+		@Override
 		public void onGetWalkingRouteResult(MKWalkingRouteResult res, int error) {
 			// 起点或终点有歧义，需要选择具体的城市列表或地址列表
 			if (error == MKEvent.ERROR_ROUTE_ADDR) {
@@ -393,6 +399,7 @@ public class RoutePlanActivity extends Activity {
 
 		}
 
+		@Override
 		public void onGetAddrResult(MKAddrInfo res, int error) {
 			if (error != 0) {
 				String str = String.format("错误号：%d", error);
@@ -421,9 +428,11 @@ public class RoutePlanActivity extends Activity {
 			}
 		}
 
+		@Override
 		public void onGetPoiResult(MKPoiResult res, int arg1, int arg2) {
 		}
 
+		@Override
 		public void onGetBusDetailResult(MKBusLineResult result, int iError) {
 		}
 

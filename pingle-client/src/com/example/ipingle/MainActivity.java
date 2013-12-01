@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
 			
 		};
 		
-		button.setOnClickListener((android.view.View.OnClickListener) mOnClickListener);
+		button.setOnClickListener(mOnClickListener);
 		
 		Button routePlanButton = (Button) findViewById(R.id.routePlanButton);
 		routePlanButton.setOnClickListener(new OnClickListener() {

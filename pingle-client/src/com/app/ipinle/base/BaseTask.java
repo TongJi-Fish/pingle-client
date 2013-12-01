@@ -32,6 +32,7 @@ public class BaseTask extends Activity {
 		this.name = name;
 	}
 	
+	@Override
 	public void onStart () {
 //		Log.w("BaseTask", "onStart");
 	}
@@ -48,6 +49,7 @@ public class BaseTask extends Activity {
 //		Log.w("BaseTask", "onError");
 	}
 	
+	@Override
 	public void onStop () {
 //		Log.w("BaseTask", "onStop");
 	}

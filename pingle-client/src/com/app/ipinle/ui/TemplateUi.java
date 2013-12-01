@@ -1,5 +1,7 @@
 package com.app.ipinle.ui;
 
+import com.example.ipingle.R;
+
 import android.app.ActivityGroup;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,8 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost;
 import android.widget.Toast;
-
-import com.example.ipingle.R;
 
 public class TemplateUi extends ActivityGroup {
 
@@ -44,6 +44,7 @@ public class TemplateUi extends ActivityGroup {
 
 			if (group != null) {
 				group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+					@Override
 					public void onCheckedChanged(RadioGroup group, int checkedId) {
 						switch (checkedId) {
 						case R.id.radio_button0:

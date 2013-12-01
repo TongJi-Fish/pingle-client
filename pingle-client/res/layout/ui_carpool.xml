@@ -12,6 +12,15 @@
 	    android:text="carpool"/>
 	<!-- <include layout="@layout/ui_template_maintab" 
 	    android:gravity="bottom"/> -->
+	    
+	<Button
+                android:id="@+id/test"
+                android:layout_width="wrap_content"
+	    		android:layout_height="wrap_content"
+               
+                android:text="test" />
+
+
 
 </LinearLayout>
 </merge>
