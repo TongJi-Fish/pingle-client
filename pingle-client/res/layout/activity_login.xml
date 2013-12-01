@@ -3,40 +3,49 @@
     android:id="@+id/widget33"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#ff3399ff"
+    android:background="@drawable/background_login"
     android:orientation="vertical" >
 
     <TextView
         android:id="@+id/widget34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="125dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="50dp"
         android:text="e 拼"
         android:textSize="35sp"
-        android:typeface="serif" >
+        android:typeface="serif"
+         >
     </TextView>
 
     <EditText
         android:id="@+id/userName"
-        android:layout_width="213dp"
+        android:layout_width="300dp"
         android:layout_height="54dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
         android:hint="用户名"
-        android:textColor="#ffcccccc"
+        android:background="#ffffffcc"
+        android:textColor="#ff9999ff"
         android:textSize="18sp" >
     </EditText>
 
     <EditText
         android:id="@+id/userPassword"
-        android:layout_width="213dp"
+        android:layout_width="300dp"
         android:layout_height="54dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="5dp"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
         android:password="true"
         android:hint="密码"
-        android:textColor="#ffcccccc"
+        android:background="#ffffffcc"
+        android:textColor="#ff9999ff"
         android:textSize="18sp" >
     </EditText>
 
@@ -44,11 +53,13 @@
         android:id="@+id/login"
         android:layout_width="161dp"
         android:layout_height="39dp"
-        android:layout_marginLeft="80dp"
+        android:layout_marginLeft="0dp"
         android:layout_marginTop="30dp"
-        android:background="#ff3333ff"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:background="#ff9999ff"
         android:text="登陆"
-        android:textColor="#ff0099ff"
+        android:textColor="#ffffffff"
         android:textStyle="bold"
         android:typeface="serif" >
     </Button>

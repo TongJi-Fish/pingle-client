@@ -19,7 +19,7 @@
             style="@style/main_tab_bottom"
             android:layout_marginTop="2.0dip"
             android:checked="true"
-            android:drawableTop="@drawable/icon_1_n"
+            android:drawableTop="@drawable/icon1_new"
             android:tag="radio_button0"
             android:text="公交路线" />
 
@@ -27,7 +27,7 @@
             android:id="@+id/radio_button1"
             style="@style/main_tab_bottom"
             android:layout_marginTop="2.0dip"
-            android:drawableTop="@drawable/icon_2_n"
+            android:drawableTop="@drawable/icon2_new"
             android:tag="radio_button1"
             android:text="拼车" />
 
@@ -35,7 +35,7 @@
             android:id="@+id/radio_button2"
             style="@style/main_tab_bottom"
             android:layout_marginTop="2.0dip"
-            android:drawableTop="@drawable/icon_3_n"
+            android:drawableTop="@drawable/icon3_new"
             android:tag="radio_button2"
             android:text="导航" />
     </RadioGroup>
