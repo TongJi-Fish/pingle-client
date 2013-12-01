@@ -26,8 +26,8 @@ public class CarPoolUi extends BaseUi {
 	public Message message = new Message();
 	private LayoutInflater inflater;
 	private GridView gv_sample;
-	int count;
-	int[] pageName;
+	private int count;
+	private int[] pageName;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		setContentView(R.layout.ui_choose_type);
